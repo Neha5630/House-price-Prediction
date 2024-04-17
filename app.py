@@ -19,25 +19,23 @@ def predict_datapoint():
         
         from src.category import data
         
-        if request.form.get("vehicleType") not in data["vehicleType_category"]:
-            return render_template("form.html",message="vehicle type is not valid")
-        if request.form.get("gearbox") not in data["gearbox_category"]:
-            return render_template("form.html",message="gearbox type is not valid")
-        if request.form.get("model") not in data["model_category"]:
-            return render_template("form.html",message="model type is not valid")
-        if request.form.get("fuelType") not in data["fuelType_category"]:
-            return render_template("form.html",message="fuelType type is not valid")
-        if request.form.get("brand") not in data["brand_category"]:
-            return render_template("form.html",message="brand type is not valid")
+        if request.form.get("Name") not in data["Name_category"]:
+            return render_template("form.html",message="Name type is not valid")
+        if request.form.get("FuelType") not in data["FuelType_category"]:
+            return render_template("form.html",message="FuelType type is not valid")
+        if request.form.get("Gearbox") not in data["Gearbox_category"]:
+            return render_template("form.html",message="Gearbox is not valid")
+      
         
         
-        datanew = CustomData( yearOfRegistration = float(request.form.get('yearOfRegistration')),
-        kilometer = float(request.form.get('kilometer')),
-        vehicleType = request.form.get("vehicleType"),
-        gearbox= request.form.get("gearbox"), 
-        model = request.form.get("model"),
-        fuelType= request.form.get("fuelType"), 
-        brand =request.form.get("brand"))
+        datanew = CustomData( 
+        Name =request.form.get("Name"),
+        Mileage =float(request.form.get("Mileage")),
+        FuelType =request.form.get("FuelType"),
+        Year =float(request.form.get("Year")),
+        Kms_Driven=float(request.form.get("Kms_Driven")),
+        Gearbox=request.form.get("Gearbox"),
+                             )
     new_data = datanew.get_data_as_dataframe()
     predict_pipeline = PredictPipeline()
     pred = predict_pipeline.predict(new_data)

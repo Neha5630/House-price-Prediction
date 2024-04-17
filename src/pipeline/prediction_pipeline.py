@@ -27,36 +27,31 @@ class PredictPipeline:
             raise CustomException(e,sys)
         
 class CustomData: 
-        def __init__(self, yearOfRegistration:int, 
-                     kilometer:float, 
-                      vehicleType:str,
-                      gearbox:str,
-                     model:str, 
-                     fuelType:str, 
-                     brand:str): 
-            self.yearOfRegistration =yearOfRegistration
-            self.kilometer = kilometer
-            self.vehicleType = vehicleType
-            self.gearbox= gearbox
-            self.model = model
-            self.fuelType = fuelType 
-            self.brand = brand
-        
-            
-
-        
+        def __init__(self, Name:str, 
+                     Mileage:float, 
+                     Year:float,
+                     Kms_Driven:float,
+                     FuelType:str, 
+                     Gearbox:str, 
+                     ): 
+                self.Name =Name
+                self.Mileage =Mileage
+                self.Year = Year
+                self.Kms_Driven=Kms_Driven
+                self.FuelType =FuelType
+                self.Gearbox = Gearbox
+              
+               
         def get_data_as_dataframe(self): 
             try: 
                 custom_data_input_dict = {
-                    'yearOfRegistration': [self.yearOfRegistration], 
-                    'kilometer': [self.kilometer], 
-                    'vehicleType': [self.vehicleType], 
-                    'gearbox': [self.gearbox],
-                    'model':[self.model],
-                    'fuelType':[self.fuelType], 
-                    'brand': [self.brand], 
-                        
-
+                    'Name': [self.Name], 
+                    'Mileage': [self.Mileage],
+                    'Year': [self.Year], 
+                    'Kms_Driven': [self.Kms_Driven],
+                    'FuelType':[self.FuelType],
+                    'Gearbox':[self.Gearbox], 
+                   
                 }
                 
                 df = pd.DataFrame(custom_data_input_dict)

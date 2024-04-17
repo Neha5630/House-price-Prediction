@@ -17,7 +17,7 @@ setup(
     name = "DemoPipline", 
     version = "0.0.1", 
     author = "Neha Yadav", 
-    description= "A trial End to End ML project created for First batch of LP students",
+    description= "An End to End ML project ",
     author_email= "neha5630@gmail.com", 
     install_requires = get_requirements("requirements.txt"),
     packages= find_packages()
