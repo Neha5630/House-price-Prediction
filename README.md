@@ -1,4 +1,9 @@
 ## End to End Project
+## Aim
+
+```
+This project aims to predict the price of an used car by taking it's company name,year of purchase,and other parameter.
+``` 
 
 ### Step 1: Create a new environment
 
@@ -39,5 +44,5 @@ Create two python files training_pipeline and prediction_pipeline with __init__.
 
 ### Step 6: Create a folder called `notebooks` 
 ```
-Create a folder called data and include the dataset. Additionally, create a EDA.ipynb file to do the EDA analysis.
+Create a folder called data and include the dataset. Additionally, create a EDA.ipynb file to do the EDA analysis.The initial dataset was not clean so we scrape the data and then used the cleaned dataset for further analysis.
 ```
