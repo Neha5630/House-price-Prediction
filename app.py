@@ -3,6 +3,7 @@ from flask import Flask, request, render_template, jsonify
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
 from src.category import data
 
+
 application = Flask(__name__)
 app = application
 
@@ -32,9 +33,9 @@ def predict_datapoint():
         Name =request.form.get("Name"),
         Mileage =float(request.form.get("Mileage")),
         FuelType =request.form.get("FuelType"),
-        Year =float(request.form.get("Year")),
+        year =(request.form.get("year")),
         Kms_Driven=float(request.form.get("Kms_Driven")),
-        Gearbox=request.form.get("Gearbox"),
+        Gearbox=request.form.get("Gearbox")
                              )
     new_data = datanew.get_data_as_dataframe()
     predict_pipeline = PredictPipeline()

@@ -29,14 +29,14 @@ class PredictPipeline:
 class CustomData: 
         def __init__(self, Name:str, 
                      Mileage:float, 
-                     Year:float,
+                     year:float,
                      Kms_Driven:float,
                      FuelType:str, 
                      Gearbox:str, 
                      ): 
                 self.Name =Name
                 self.Mileage =Mileage
-                self.Year = Year
+                self.year = year
                 self.Kms_Driven=Kms_Driven
                 self.FuelType =FuelType
                 self.Gearbox = Gearbox
@@ -47,7 +47,7 @@ class CustomData:
                 custom_data_input_dict = {
                     'Name': [self.Name], 
                     'Mileage': [self.Mileage],
-                    'Year': [self.Year], 
+                    'year': [self.year], 
                     'Kms_Driven': [self.Kms_Driven],
                     'FuelType':[self.FuelType],
                     'Gearbox':[self.Gearbox], 
